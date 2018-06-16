@@ -1,6 +1,7 @@
-`heroku create pern-template-test`
-`heroku addons:create heroku-postgresql:hobby-dev --name=pern-template-test-db`
-`heroku addons:attach pern-template-test-db --app=pern-template-test`
+`heroku login`
+`heroku create invegorate`
+`heroku addons:create heroku-postgresql:hobby-dev --name=invegorate-db`
+`heroku addons:attach invegorate-db --app=invegorate`
 `git push heroku master`
 `heroku ps:scale web=1`
 `heroku open`
