@@ -4,7 +4,6 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 // var logger = require('morgan');
 
-var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
 const ENV = process.env.NODE_ENV;
@@ -12,21 +11,17 @@ const PORT = process.env.PORT || 5000;
 
 const app = express();
 
-app.use('/custom', express.static(path.join(__dirname, '../client/custom')));
-// view engine setup
-// app.set('views', path.join(__dirname, 'views'));
-// app.set('view engine', 'jade');
-
 // app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
+app.use('/custom', express.static(path.join(__dirname, '../client/custom')));
+
 // Serve static files from the React app.
 if (ENV === 'production') 
   app.use(express.static(path.join(__dirname, '../client/build')));
 
-// app.use('/', indexRouter);
 app.use('/api/users', usersRouter);
 
 // The "catchall" handler: for any request that doesn't
