@@ -12,14 +12,6 @@ const PORT = process.env.PORT || 5000;
 
 const app = express();
 
-// The "catchall" handler: for any request that doesn't
-// match one above, send back React's index.html file.
-if (ENV === 'production') {
-  app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname + '../client/build/index.html'));
-  });
-}
-
 app.use('/custom', express.static(path.join(__dirname, '../client/custom')));
 // view engine setup
 // app.set('views', path.join(__dirname, 'views'));
@@ -37,7 +29,13 @@ if (ENV === 'production')
 // app.use('/', indexRouter);
 app.use('/api/users', usersRouter);
 
-
+// The "catchall" handler: for any request that doesn't
+// match one above, send back React's index.html file.
+if (ENV === 'production') {
+  app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname + '../client/build/index.html'));
+  });
+}
 
 // catch 404 and forward to error handler
 // app.use(function(req, res, next) {
