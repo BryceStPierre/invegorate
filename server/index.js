@@ -12,6 +12,7 @@ const PORT = process.env.PORT || 5000;
 
 const app = express();
 
+app.use('/custom', express.static(path.join(__dirname, '../client/custom')));
 // view engine setup
 // app.set('views', path.join(__dirname, 'views'));
 // app.set('view engine', 'jade');
@@ -26,13 +27,13 @@ if (ENV === 'production')
   app.use(express.static(path.join(__dirname, '../client/build')));
 
 // app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/api/users', usersRouter);
 
 // The "catchall" handler: for any request that doesn't
 // match one above, send back React's index.html file.
 if (ENV === 'production') {
   app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname + '/../client/build/index.html'));
+    res.sendFile(path.join(__dirname + '../client/build/index.html'));
   });
 }
 
