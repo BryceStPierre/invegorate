@@ -5,10 +5,12 @@
   "main": "index.js",
   "scripts": {
     "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "dev-custom": "concurrently \"npm run server\" \"npm run custom\"",
     "client": "npm start --prefix client",
+    "custom": "npm start --prefix client/custom",
     "server": "nodemon server",
     "start": "node server",
-    "heroku-postbuild": "cd client && npm install && npm run build"
+    "heroku-postbuild": "cd client && npm install && npm run build && cd custom && npm install && npm run build"
   },
   "repository": {
     "type": "git",

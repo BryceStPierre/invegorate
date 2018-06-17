@@ -14,7 +14,7 @@ app.use(cookieParser());
 app.use('/api/users', require('./routes/users'));
 
 // Serve custom static non-React content.
-app.use('/custom', express.static(path.join(__dirname, '../client/custom')));
+app.use('/custom', express.static(path.join(__dirname, '../client/custom/dist')));
 
 if (ENV === 'production') {
   // Serve static files from the React app.
