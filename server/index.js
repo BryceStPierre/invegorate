@@ -28,7 +28,7 @@ app.use('/api/users', usersRouter);
 // match one above, send back React's index.html file.
 if (ENV === 'production') {
   app.use((req, res) => {
-    res.sendFile(path.join(__dirname + '../client/build/index.html'));
+    res.sendFile(path.join(__dirname + '/../client/build/index.html'));
   });
 }
 
