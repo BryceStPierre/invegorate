@@ -18,11 +18,11 @@ app.use(cookieParser());
 
 app.use('/custom', express.static(path.join(__dirname, '../client/custom')));
 
+app.use('/api/users', usersRouter);
+
 // Serve static files from the React app.
 if (ENV === 'production') 
   app.use(express.static(path.join(__dirname, '../client/build')));
-
-app.use('/api/users', usersRouter);
 
 // The "catchall" handler: for any request that doesn't
 // match one above, send back React's index.html file.
