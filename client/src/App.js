@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
-import './App.css';
 
 import {
   BrowserRouter as Router,
@@ -8,6 +7,7 @@ import {
   Link
 } from 'react-router-dom';
 
+import { Button } from 'semantic-ui-react';
 
 const Home = () => (
   <div>
@@ -81,6 +81,7 @@ class App extends Component {
           </header>
           <p className="App-intro">
             To get started, edit <code>src/App.js</code> and save to reload.
+            <Button>Click Here</Button>
           </p>
           <ul>
           {this.state.users.map(user =>
