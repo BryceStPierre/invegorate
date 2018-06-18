@@ -9,6 +9,7 @@
     "client": "npm start --prefix client",
     "custom": "npm start --prefix client/custom",
     "server": "nodemon server",
+    "deploy": "git push heroku master",
     "start": "node server",
     "heroku-postbuild": "cd client && npm install && npm run build && cd custom && npm install && npm run build"
   },
