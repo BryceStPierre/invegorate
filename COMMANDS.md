@@ -6,3 +6,7 @@
 `heroku ps:scale web=1`
 `heroku open`
 `heroku logs --tail`
+
+`heroku pg:reset --app invegorate invegorate-db`
+`pg_dump -U postgres skeam --no-owner --no-acl -f skeam.sql`
+`cat file.sql | heroku pg:psql --app invegorate`
