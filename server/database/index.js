@@ -1,6 +1,6 @@
 var { Pool } = require('pg');
 
-const CONNECTION_STRING = process.env.DATABASE_URL || 'postgresql://postgres:postgres@localhost:5432/pern';
+const CONNECTION_STRING = process.env.DATABASE_URL || 'postgresql://postgres:postgres@localhost:5432/invegorate-db';
 const SSL = process.env.NODE_ENV === 'production';
 
 class Database {
@@ -16,6 +16,7 @@ class Database {
     });
   }
 
+  // query (query, [params], callback(err, res))
   query (query, ...args) {
     this._pool.connect((err, client, done) => {
       if (err) throw err;
@@ -24,10 +25,12 @@ class Database {
 
       client.query(query, params, (err, res) => {
         done();
-        if (err)
+        if (err) {
+          callback(err, null);
           console.log(err.stack);
-        else
-          callback(res.rows.length > 0 ? res.rows : null);
+        } else {
+          callback(null, res.rows.length > 0 ? res.rows : null);
+        }
       });
     });
   }

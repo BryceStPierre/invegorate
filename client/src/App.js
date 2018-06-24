@@ -9,6 +9,9 @@ import {
 
 import { Button } from 'semantic-ui-react';
 
+
+import Browse from './Browse';
+
 const Home = () => (
   <div>
     <h2>Home</h2>
@@ -93,6 +96,7 @@ class App extends Component {
               <li><Link to="/">Home</Link></li>
               <li><Link to="/about">About</Link></li>
               <li><Link to="/topics">Topics</Link></li>
+              <li><Link to="/browse/broccoli">broccoli</Link></li>
             </ul>
 
             <hr/>
@@ -100,6 +104,7 @@ class App extends Component {
             <Route exact path="/" component={Home}/>
             <Route path="/about" component={About}/>
             <Route path="/topics" component={Topics}/>
+            <Route path="/browse/:name" component={Browse}/>
           </div>
         </div>
       </Router>

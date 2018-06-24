@@ -28,10 +28,10 @@ if (ENV === 'production') {
   });
 }
 
-// var db = require('./database');
-// db.query('SELECT NOW()', (res) => {
-//   console.log(`PostgreSQL connected: ${res[0].now}.`);
-// });
+var db = require('./database');
+db.query('SELECT NOW()', (err, res) => {
+  console.log(`PostgreSQL connected: ${res[0].now}.`);
+});
 
 app.listen(PORT, () => { 
   console.log(`Server listening on port ${PORT}...`); 
