@@ -16,8 +16,5 @@ CREATE TABLE items
   PRIMARY KEY (id)
 );
 
-
-
-
 SELECT items.name_formatted, items.name_species, categories.label as category from
-items INNER JOIN categories ON items.category_id = categories.id WHERE items.id = 25;
+items INNER JOIN categories ON items.category_id = categories.id WHERE items.name = 'broccoli';
