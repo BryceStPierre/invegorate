@@ -1,0 +1,286 @@
+﻿id,name,name_formatted,name_species,category_id
+0,ahipa,Ahipa,Pachyrhizus ahipa,5
+1,amaranth,Amaranth,Amaranthus cruentus,4
+2,american-groundnut,American groundnut,Apios americana,6
+3,apple,Apple,Malus pumila (Malus domestica),2
+4,apricot,Apricot,Prunus armeniaca,2
+5,arracacha,Arracacha,Arracacia xanthorrhiza,5
+6,artichoke,Artichoke,Cynara cardunculus / scolymus,1
+7,arugula,Arugula,Eruca sativa,4
+8,asparagus,Asparagus,Asparagus officinalis,0
+9,avocado,Avocado,Persea americana,2
+10,azuki-bean,Azuki bean,Vigna angularis,6
+11,bamboo-shoot,Bamboo shoot,Bambusa vulgaris,5
+12,banana,Banana,Musa acuminata (Musa balbisiana),2
+13,beet-greens,Beet greens,Beta vulgaris vulgaris,4
+14,beetroot,Beetroot,Beta vulgaris vulgaris,5
+15,bell-pepper,Bell pepper,Capsicum annuum,2
+16,bilberry,Bilberry,Vaccinium myrtillus,2
+17,bitter-melon,Bitter melon,Momordica charantia,2
+18,blackberry,Blackberry,Rubus fruticosus,2
+19,blackcurrant,Blackcurrant,Ribes nigrum,2
+20,black-eyed-pea,Black-eyed pea,Vigna unguiculata unguiculata,6
+21,blood-orange,Blood orange,Citrus x sinensis,2
+22,blueberry,Blueberry,Vaccinium,2
+23,bok-choy,Bok choy,Brassica rapa (chinensis),4
+24,borage-greens,Borage greens,Borago officinalis,4
+25,boysenberry,Boysenberry,Rubus ursinus x Rubus idaeus,2
+26,broadleaf-arrowhead,Broadleaf arrowhead,Sagittaria latifolia,5
+27,broccoli,Broccoli,Brassica oleracea,1
+28,broccolini flowers,Broccolini flowers,Brassica oleracea,1
+29,brussels-sprouts,Brussels sprouts,Brassica oleracea (gemmifera),4
+30,buddhas-hand,Buddha's hand,Citrus medica var. sarcodactylis,2
+31,burdock,Burdock,Arctium lappa,5
+32,button-mushrooms,Button mushrooms,Agaricus bisporus,3
+33,cabbage,Cabbage,Brassica oleracea (capitata),4
+34,camas,Camas,Camassia,5
+35,canna,Canna,Canna,5
+36,cantaloupe,Cantaloupe,Cucumis melo var. cantalupo,2
+37,caper,Caper,Capparis spinosa,1
+38,cardoon,Cardoon,Cynara cardunculus,0
+39,carrot,Carrot,Daucus carota,5
+40,cassava,Cassava,Manihot esculenta,5
+41,catsear,Catsear,Hypochaeris radicata,4
+42,cauliflower,Cauliflower,Brassica oleracea,1
+43,celeriac,Celeriac,Apium graveolens (rapaceum),0
+44,celery,Celery,Apium graveolens,0
+45,celtuce,Celtuce,Lactuca sativa (asparagina),4
+46,chaya,Chaya,Cnidoscolus aconitifolius aconitifolius,4
+47,chayote,Chayote,Sechium edule,2
+48,cherimoya,Cherimoya,Annona cherimola,2
+49,cherry,Cherry,Prunus avium (Prunus cerasus),2
+50,chickpea,Chickpea,Cicer arietinum,6
+51,chickweed,Chickweed,Stellaria,4
+52,chicory,Chicory,Cichorium intybus,4
+53,chinese-artichoke,Chinese artichoke,Stachys affinis,5
+54,chinese-mallow,Chinese mallow,Malva verticillata,4
+55,chives,Chives,Allium schoenoprasum,0
+56,clementine,Clementine,Citrus x clementina,2
+57,cloudberry,Cloudberry,Rubus chamaemorus,2
+58,coconut,Coconut,Cocos nucifera,2
+59,collard-greens,Collard greens,Brassica oleracea,4
+60,common-bean,Common bean,Phaseolus vulgaris,6
+61,common-purslane,Common purslane,Portulaca oleracea,4
+62,corn-salad,Corn salad,Valerianella locusta,4
+63,courgette-flowers,Courgette flowers,Cucurbita,1
+64,crab-apples,Crab apples,Malus,2
+65,cranberry,Cranberry,Vaccinium macrocarpon,2
+66,cress,Cress,Lepidium sativum,4
+67,cucumber,Cucumber,Cucumis sativus,2
+68,currant,Currant,Ribes,2
+69,daikon,Daikon,Raphanus sativus (longipinnatus),5
+70,damson,Damson,Prunus domestica subsp. insititia,2
+71,dandelion,Dandelion,Taraxacum officinale,4
+72,date,Date,Phoenix dactylifera,2
+73,daylily,Daylily,Hemerocallis fulva,1
+74,dill,Dill,Anethum graveolens,4
+75,dolichos-bean,Dolichos bean,Lablab purpureus,6
+76,dragonfruit,Dragonfruit,Hylocereus undatus,2
+77,drumstick,Drumstick,Moringa oleifera,6
+78,durian,Durian,Durio zibethinus,2
+79,earthnut-pea,Earthnut pea,Lathyrus tuberosus,5
+80,eggplant,Eggplant,Solanum melongena,2
+81,elderberry,Elderberry,Sambucus,2
+82,elephant-foot-yam,Elephant foot yam,Amorphophallus paeoniifolius,5
+83,elephant-garlic,Elephant garlic,Allium ampeloprasum (ampeloprasum),0
+84,endive,Endive,Cichorium endivia,4
+85,ensete,Ensete,Ensete ventricosum,5
+86,fat-hen,Fat hen,Chenopodium album,4
+87,fava-bean,Fava bean,Vicia faba,6
+88,feijoa,Feijoa,Acca sellowiana,2
+89,fiddlehead,Fiddlehead,Pteridium aquilinum,4
+90,fig,Fig,Ficus carica,2
+91,florence-fennel,Florence fennel,Foeniculum vulgare (dulce),0
+92,fluted-pumpkin,Fluted pumpkin,Telfairia occidentalis,4
+93,galangal,Galangal,Alpinia galanga,5
+94,garbanzo,Garbanzo,Cicer arietinum,6
+95,garden-rocket,Garden rocket,Eruca sativa,4
+96,garland-chrysanthemum,Garland Chrysanthemum,Chrysanthemum coronarium,4
+97,garlic,Garlic,Allium sativum,0
+98,garlic-chives,Garlic chives,Allium tuberosum,0
+99,ginger,Ginger,Zingiber officinale,5
+100,goji-berry,Goji berry,Lycium barbarum (Lycium chinense),2
+101,golden-samphire,Golden samphire,Inula crithmoides,4
+102,good-king-henry,Good King Henry,Chenopodium bonus-henricus,4
+103,gooseberry,Gooseberry,Ribes uva-crispa (and syn. Ribes grossularia),2
+104,grape,Grape,Vitis,2
+105,grapefruit,Grapefruit,Citrus x paradisi,2
+106,grape-leaves,Grape leaves,Vitis,4
+107,greater-plantain,Greater plantain,Plantago major,4
+108,green-bean,Green bean,Phaseolus vulgaris,6
+109,guar,Guar,Cyamopsis tetragonoloba,6
+110,guava,Guava,Psidium guajava,2
+111,hamburg-parsley,Hamburg parsley,Petroselinum crispum tuberosum,5
+112,honeyberry,Honeyberry,Lonicera caerulea,2
+113,honeydew,Honeydew,Cucumis melo,2
+114,horse-gram,Horse gram,Macrotyloma uniflorum,6
+115,horseradish,Horseradish,Armoracia rusticana,5
+116,huckleberry,Huckleberry,Gaylussacia baccata,2
+117,indian-pea,Indian pea,Lathyrus sativus,6
+118,ivy-gourd,Ivy gourd,Coccinia grandis,2
+119,jabuticaba,Jabuticaba,Plinia cauliflora,2
+120,jackfruit,Jackfruit,Artocarpus heterophyllus,2
+121,jambul,Jambul,Syzygium cumini,2
+122,jerusalem-artichoke,Jerusalem artichoke,Helianthus tuberosus,5
+123,jicama,Jicama,Pachyrhizus erosus,5
+124,jujube,Jujube,Ziziphus jujuba,2
+125,juniper-berry,Juniper berry, Juniperus communis,2
+126,kai-lan,Kai-lan,Brassica rapa (alboglabra),4
+127,kale,Kale,Brassica oleracea (acephala),4
+128,kiwi,Kiwi,Actinidia deliciosa,2
+129,kohlrabi,Kohlrabi,Brassica oleracea (gongylodes),0
+130,komatsuna,Komatsuna,Brassica rapa (pervidis / komatsuna),4
+131,kuka,Kuka,Adansonia,4
+132,kumquat,Kumquat,Citrus japonica,2
+133,kurrat,Kurrat,Allium ampeloprasum (kurrat),0
+134,lagos-bologi,Lagos bologi,Talinum fruticosum,4
+135,lambs-lettuce,Lamb's lettuce,Valerianella locusta,4
+136,lambs-quarters,Lamb's quarters,Chenopodium album,4
+137,land-cress,Land cress,Barbarea verna,4
+138,leek,Leek,Allium porrum,0
+139,lemon,Lemon,Citrus limon,2
+140,lemongrass,Lemongrass,Cymbopogon citratus,0
+141,lentil,Lentil,Lens culinaris,6
+142,lettuce,Lettuce,Lactuca sativa,4
+143,lima-bean,Lima bean,Phaseolus lunatus,6
+144,lime,Lime,Citrus x latifolia,2
+145,lizards-tail,Lizard's tail,Houttuynia cordata,4
+146,longan,Longan,Dimocarpus longan,2
+147,loquat,Loquat,Eriobotrya japonica,2
+148,loroco,Loroco,Fernaldia pandurata,1
+149,lotus-root,Lotus root,Nelumbo nucifera,0
+150,luffa,Luffa,Luffa cylindrica,2
+151,lychee,Lychee,Litchi chinensis,2
+152,malabar-spinach,Malabar spinach,Basella alba,4
+153,mallow,Mallow,Malvaceae,4
+154,manchurian-wild-rice,Manchurian wild rice,Zizania latifolia,0
+155,mandarin,Mandarin,Citrus reticulata,2
+156,mango,Mango,Mangifera indica,2
+157,mangosteen,Mangosteen,Garcinia mangostana,2
+158,mashua,Mashua,Tropaeolum tuberosum,5
+159,melokhia,Melokhia,Corchorus olitorius,4
+160,miners-lettuce,Miner's lettuce,Claytonia perfoliata,4
+161,miracle-fruit,Miracle fruit,Synsepalum dulcificum,2
+162,mizuna-greens,Mizuna greens,Brassica rapa (nipposinica),4
+163,moth-bean,Moth bean,Vigna acontifolia,6
+164,mulberry,Mulberry,Morus,2
+165,mung-bean,Mung bean,Vigna radiata,6
+166,mustard,Mustard,Sinapis alba,4
+167,nance,Nance,Byrsonima crassifolia,2
+168,napa-cabbage,Napa cabbage,Brassica rapa (chinensis),4
+169,nectarine,Nectarine,Prunus persica var. nucipersica,2
+170,new-zealand-spinach,New Zealand Spinach,Tetragonia tetragonioides,4
+171,nopal,Nopal,Opuntia ficus-indica,0
+172,okra,Okra,Abelmoschus esculentus,6
+173,olive,Olive,Olea europaea,2
+174,onion,Onion,Allium cepa,0
+175,orache,Orache,Atriplex hortensis,4
+176,orange,Orange,Citrus x sinensis,2
+177,papaya,Papaya,Carica papaya,2
+178,paracress,Paracress,Acmella oleracea,4
+179,parsnip,Parsnip,Pastinaca sativa,5
+180,passionfruit,Passionfruit,Passiflora edulis,2
+181,pea,Pea,Pisum sativum,6
+182,peach,Peach,Prunus persica,2
+183,peanut,Peanut,Arachis hypogaea,6
+184,pear,Pear,Pyrus,2
+185,pearl-onion,Pearl onion,Allium ampeloprasum (sectivum),0
+186,persimmon,Persimmon,Diospyros kaki,2
+187,pigeon-pea,Pigeon pea,Cajanus cajan,6
+188,pignut,Pignut,Conopodium majus,5
+189,pineapple,Pineapple,Ananas comosus,2
+190,plantain,Plantain,Musa x paradisiaca,2
+191,plum,Plum,Prunus domestica,2
+192,poke,Poke,Phytolacca americana,4
+193,pomegranate,Pomegranate,Punica granatum,2
+194,pomelo,Pomelo,Citrus maxima,2
+195,portabello-mushrooms,Portabello mushrooms,Agaricus bisporus,3
+196,potato,Potato,Solanum tuberosum,5
+197,potato-onion,Potato onion,Allium cepa (aggregatum),0
+198,prairie-turnip,Prairie turnip,Psoralea esculenta,5
+199,prune,Prune,Prunus domestica,2
+200,prussian-asparagus,Prussian asparagus,Ornithogalum pyrenaicum,0
+201,pumpkin,Pumpkin,Cucurbita,2
+202,quince,Quince,Cydonia oblonga,2
+203,radicchio,Radicchio,Cichorium intybus,4
+204,radish,Radish,Raphanus sativus,5
+205,raisin,Raisin,Vitis,2
+206,rambutan,Rambutan,Nephelium lappaceum,2
+207,rapini,Rapini,Brassica rapa rapa,4
+208,raspberry,Raspberry,Rubus idaeus,2
+209,redcurrant,Redcurrant,Ribes rubrum,2
+210,ricebean,Ricebean,Vigna umbellata,6
+211,runner-bean,Runner bean,Phaseolus coccineus,6
+212,rutabaga,Rutabaga,Brassica napus (napobrassica),5
+213,salak,Salak,Salacca zalacca,2
+214,salal berry,Salal berry,Gaultheria shallon,2
+215,salmonberry,Salmonberry,Rubus spectabilis,2
+216,salsify,Salsify,Tragopogon porrifolius,5
+217,samphire,Samphire,Crithmum maritimum,4
+218,satsuma,Satsuma,Citrus unshiu,2
+219,scorzonera,Scorzonera,Scorzonera hispanica,5
+220,sculpit,Sculpit,Silene inflata,4
+221,sea-beet,Sea beet,Beta vulgaris maritima,4
+222,sea-kale,Sea kale,Crambe maritima,4
+223,shallot,Shallot,Allium cepa (aggregatum),0
+224,shepherds-purse,Shepherd's purse,Capsella_bursa-pastoris,4
+225,shiitake-mushrooms,Shiitake mushrooms,Lentinula edodes,3
+226,sierra-leone-bologi,Sierra Leone bologi,Crassocephalum,4
+227,skirret,Skirret,Sium sisarum,5
+228,snap-pea,Snap pea,Pisum sativum (macrocarpon),6
+229,snow-pea,Snow pea,Pisum sativum (saccharatum),6
+230,soko,Soko,Celosia argentea,4
+231,sorrel,Sorrel,Rumex acetosa,4
+232,sour-cabbage,Sour cabbage,Brassica oleracea,4
+233,soursop,Soursop,Annona muricata,2
+234,soybean,Soybean,Glycine max,6
+235,spinach,Spinach,Spinacia oleracea,4
+236,spring-onion,Spring onion,Allium wakegi,0
+237,squash,Squash,Cucurbita,2
+238,squash-blossoms,Squash blossoms,Cucurbita,1
+239,star-fruit,Star fruit,Averrhoa carambola,2
+240,strawberry,Strawberry,Fragaria x ananassa,2
+241,summer-purslane,Summer purslane,Portulaca oleracea,4
+242,swede,Swede,Brassica napus (napobrassica),5
+243,sweet-pepper,Sweet pepper,Capsicum annuum (grossum),2
+244,sweet-potato,Sweet potato,Ipomoea batatas,5
+245,swiss-chard,Swiss chard,Beta vulgaris cicla (flavescens),4
+246,tamarillo,Tamarillo,Solanum betaceum,2
+247,tamarind,Tamarind,Tamarindus indica,2
+248,tangerine,Tangerine,Citrus tangerina,2
+249,taro,Taro,Colocasia esculenta,5
+250,tarwi,Tarwi,Lupinus mutabilis,6
+251,tatsoi,Tatsoi,Brassica rapa (rosularis),4
+252,tepary-bean,Tepary bean,Phaseolus acutifolius,6
+253,ti,Ti,Cordyline fruticosa,5
+254,tigernut,Tigernut,Cyperus esculentus,5
+255,tinda,Tinda,Praecitrullus fistulosus,2
+256,tomatillo,Tomatillo,Physalis philadelphica,2
+257,tomato,Tomato,Solanum lycopersicum,2
+258,tree-onion,Tree onion,Allium x proliferum,0
+259,turmeric,Turmeric,Curcuma longa,5
+260,turnip,Turnip,Brassica rapa (rapifera),5
+261,ugli-fruit,Ugli fruit,Citrus reticulata x Citrus paradisi,2
+262,ulluco,Ulluco,Ullucus tuberosus,5
+263,urad-bean,Urad bean,Vigna mungo,6
+264,vanilla,Vanilla,Vanilla,2
+265,velvet-bean,Velvet bean,Mucuna pruriens,6
+266,wasabi,Wasabi,Wasabia japonica,5
+267,water-caltrop,Water caltrop,Trapa natans,5
+268,water-chestnut,Water chestnut,Eleocharis dulcis,5
+269,watercress,Watercress,Nasturtium officinale,4
+270,watermelon,Watermelon,Citrullus lanatus,2
+271,water-spinach,Water spinach,Ipomoea aquatica,4
+272,welsh-onion,Welsh onion,Allium fistulosum,0
+273,west-indian-gherkin,West Indian gherkin,Cucumis anguria,2
+274,wheatgrass,Wheatgrass,Triticum aestivum,4
+275,wild-leek,Wild leek,Allium tricoccum,0
+276,winged-bean,Winged bean,Psophocarpus tetragonolobus,6
+277,winter-melon,Winter melon,Benincasa hispida,2
+278,yacon,Yacon,Smallanthus sonchifolius,5
+279,yam,Yam,Oxalis tuberosa,5
+280,yao-choy,Yao choy,Brassica napus,4
+281,yardlong-bean,Yardlong bean,Vigna unguiculata (sesquipedalis),6
+282,yarrow,Yarrow,Achillea millefolium,4
+283,yuzu,Yuzu,Citrus junos,2
+284,zucchini,Zucchini,Cucurbita pepo,2
