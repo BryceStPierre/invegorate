@@ -13,4 +13,7 @@
 `cat file.sql | heroku pg:psql --app invegorate`
 
 `TRUNCATE TABLE items`
-`\copy items(id,name,name_formatted,name_species,category_id) FROM 'C:\Users\bryce\Projects\invegorate\server\database\items.csv' DELIMITER ',' CSV HEADER;`
+`\copy items(id,name,name_formatted,name_species,category_id) FROM 'C:\Users\bryce\Projects\invegorate\server\database\raw\items.csv' DELIMITER ',' CSV HEADER;`
+`TRUNCATE TABLE categories`
+`\copy categories(id,name,label) FROM 'C:\Users\bryce\Projects\invegorate\server\database\raw\categories.csv' DELIMITER ',' CSV HEADER;`
+
