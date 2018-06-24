@@ -65,9 +65,9 @@ class App extends Component {
   }
   
   componentDidMount() {
-    fetch('/api/users')
-      .then(res => res.json())
-      .then(users => this.setState({ users }));
+    // fetch('/api/users')
+    //   .then(res => res.json())
+    //   .then(users => this.setState({ users }));
   }
 
   render() {

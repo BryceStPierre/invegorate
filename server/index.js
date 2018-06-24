@@ -11,7 +11,10 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
 // Register API middleware.
-app.use('/api/users', require('./routes/users'));
+app.use('/api/item', require('./api/item'));
+app.use('/api/price', require('./api/price'));
+app.use('/api/climate', require('./api/climate'));
+app.use('/api/nutrients', require('./api/nutrients'));
 
 // Serve custom static non-React content.
 app.use('/custom', express.static(path.join(__dirname, '../client/custom/dist')));
