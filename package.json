@@ -26,6 +26,7 @@
   "homepage": "https://github.com/BryceStPierre/invegorate#readme",
   "dependencies": {
     "cookie-parser": "^1.4.3",
+    "csv-parse": "^2.5.0",
     "express": "^4.16.3",
     "pg": "^7.4.3"
   },
