@@ -18,6 +18,12 @@ export default class Browse extends Component {
       .then(item => {
         console.log(item);
       });
+
+    fetch(`/api/nutrients/${name}`)
+      .then(res => res.json())
+      .then(nutrients => {
+        console.log(nutrients);
+      });
   }
 
   render() {

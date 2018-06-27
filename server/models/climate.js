@@ -1,5 +1,6 @@
+
 class Climate {
-  constructor () {
+  static retrieveByName (name, callback) {
     
   }
 }

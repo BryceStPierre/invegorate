@@ -8,7 +8,7 @@ class Item {
       if (err)
         callback({message: 'Not found.'}, res);
       else 
-        callback(null, res);
+        callback(null, res[0]); //RETURNS THE FIRST ROW.
     });
   }
 }

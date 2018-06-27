@@ -1,8 +1,14 @@
 var express = require('express');
 var router = express.Router();
 
-router.get('/', function (req, res) {
-  
+var Nutrients = require('../models/nutrients');
+
+router.get('/:name', function (req, res) {
+  Nutrients.retrieveByName(req.params.name, function (err, nutrients) {
+    if (err)
+      return res.json(err);
+    return res.json(nutrients);
+  });
 });
 
 module.exports = router;
