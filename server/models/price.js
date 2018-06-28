@@ -2,7 +2,7 @@ var request = require('request-promise');
 
 class Price {
 
-  static retrieveByName (name, postalCode, callback) {
+  static retrieveByName (name, location, callback) {
 
     const testName = `broccoli`;
     const testPostalCode = `N8N4T3`;
@@ -16,6 +16,14 @@ class Price {
       console.log(err);
     });
   } 
+
+  static retrieveFromAPI () {
+
+  }
+
+  static retrieveFromCache () {
+
+  }
 }
 
 module.exports = Price;
