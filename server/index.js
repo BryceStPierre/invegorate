@@ -14,6 +14,7 @@ app.use(cookieParser());
 app.use('/api/item', require('./api/item'));
 app.use('/api/price', require('./api/price'));
 app.use('/api/climate', require('./api/climate'));
+app.use('/api/location', require('./api/location'));
 app.use('/api/nutrients', require('./api/nutrients'));
 
 // Serve custom static non-React content.

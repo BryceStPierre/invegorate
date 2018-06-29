@@ -3,23 +3,9 @@ var googleMapsClient = require('@google/maps').createClient({
 });
 
 class Location {
-
   static retrieveByAddress (address, callback) {
     googleMapsClient.geocode({
-      address: ''
-    }, function(err, response) {
-      if (err)
-        console.log(err);
-
-        var postalCode = response.json.results[0].address_components.filter(o => {
-          return o.types.includes('postal_code');
-        })[0].long_name;
-    });
-  }
-
-  static retrieveByLatLng (latitude, longitude, callback) {
-    googleMapsClient.reverseGeocode({
-      latlng: [45.5016889, -73.56725599999999]
+      address: address
     }, function(err, response) {
       if (err)
         console.log(err);
@@ -29,18 +15,32 @@ class Location {
       })[0].long_name;
 
       callback(err, postalCode);
-      // res.json(postalCode);
+    });
+  }
+
+  static retrieveByLatLng (latitude, longitude, callback) {
+    googleMapsClient.reverseGeocode({
+      latlng: [latitude, longitude]
+    }, function(err, response) {
+      if (err)
+        console.log(err);
+
+      var postalCode = response.json.results[0].address_components.filter(o => {
+        return o.types.includes('postal_code');
+      })[0].long_name;
+
+      callback(err, postalCode);
     });
   }
 
   static retrievePlacesByName (input, callback) {
     googleMapsClient.placesAutoComplete({
-      input: input
+      input: input,
+      sessiontoken: ""
     }, function (err, response) {
       if (err)
         console.log(err);
-
-      callback(err, response);
+      callback(err, response.json.predictions);
     });
   }
 }
