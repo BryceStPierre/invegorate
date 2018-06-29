@@ -34,3 +34,6 @@ CREATE TABLE prices
 
 SELECT items.name_formatted, items.name_species, categories.label as category from
 items INNER JOIN categories ON items.category_id = categories.id WHERE items.name = 'broccoli';
+
+
+SELECT product_name, price_regular, price_sale, unit_id from prices INNER JOIN items ON prices.plant_id = items.id WHERE items.name = 'american-groundnut';
