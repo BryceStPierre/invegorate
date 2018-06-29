@@ -16,5 +16,21 @@ CREATE TABLE items
   PRIMARY KEY (id)
 );
 
+CREATE TABLE prices
+(
+  id serial NOT NULL,
+  plant_id serial REFERENCES items(id),
+  product_name character varying(40),
+  price_regular money NOT NULL,
+  price_sale money NOT NULL,
+  unit_id integer NOT NULL,
+  date DATE NOT NULL DEFAULT CURRENT_DATE,
+  postal_code character varying(8),
+  city character varying(80),
+  province character varying(30),
+  country character varying(50),
+  PRIMARY KEY (id)
+);
+
 SELECT items.name_formatted, items.name_species, categories.label as category from
 items INNER JOIN categories ON items.category_id = categories.id WHERE items.name = 'broccoli';
