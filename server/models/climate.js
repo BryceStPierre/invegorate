@@ -10,16 +10,16 @@ class Climate {
   static retrieveByName (name, callback) {
 
     const prov = 'ON';
-    const stnId = 4810; //4607
+    const stnId = 4607;
     const climateId = 6130257;
 
     request({
       uri: `http://climate.weather.gc.ca/climate_normals/bulk_data_e.html?ffmt=csv&lang=e&prov=${prov}&yr=1981&stnID=${stnId}&climateID=${climateId}+++++++++++++&submit=Download+Data`
     }).then(function (res) {
-      var header = res.split('\n');
-      header.splice(0, 3);            // Trim problematic lines.
+      var lines = res.split('\n');
+      lines.splice(0, 3);            // Trim problematic lines.
 
-      parse(header.join('\n'), {
+      parse(lines.join('\n'), {
         from: 0,
         to: 1,
         columns: true
@@ -35,12 +35,12 @@ class Climate {
           elevation: trimElevation(h[0].ELEVATION)
         };
 
-        var raw = res.split('\n');    // Trim problematic lines.
-        raw.splice(0, 13);
-        raw.splice(1, 1);
-        raw.splice(9, 1);
+        lines = res.split('\n');    // Trim problematic lines.
+        lines.splice(0, 13);
+        lines.splice(1, 1);
+        lines.splice(9, 1);
 
-        parse(raw.join('\n'), {
+        parse(lines.join('\n'), {
           from: 0,
           to: 19,
           columns: true
