@@ -1,5 +1,5 @@
 function trimElevation (string) {
-  return string;
+  return Number(string.split(" ")[0]);
 }
 
 module.exports = trimElevation;

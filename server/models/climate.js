@@ -1,33 +1,21 @@
 var request = require('request-promise');
 var parse = require('csv-parse');
+var _ = require('lodash');
 
 var convertToDecimalDegrees = require('./utils/convertToDecimalDegrees');
+var transformClimateNormals = require('./utils/transformClimateNormals');
 var trimElevation = require('./utils/trimElevation');
 
 class Climate {
   static retrieveByName (name, callback) {
-    var data = {};
 
-    var climateFields = [
-      "dailyAvgTemp",
-      "stdDev",
-      "dailyMaxTemp",
-      "dailyMinTemp",
-      "extremeMaxTemp",
-      "extremeMinTemp",
-      "rainfall",
-      "snowfall",
-      "precipitation",
-      "extremeDailyRainfall",
-      "extremeDailySnowfall",
-      "extremeDailyPrecipitation",
-      "extremeDailySnowDepth"
-    ];
+    const prov = 'ON';
+    const stnId = 4810; //4607
+    const climateId = 6130257;
 
     request({
-      uri: `http://climate.weather.gc.ca/climate_normals/bulk_data_e.html?ffmt=csv&lang=e&prov=ON&yr=1981&stnID=4607&climateID=6130257+++++++++++++&submit=Download+Data`
+      uri: `http://climate.weather.gc.ca/climate_normals/bulk_data_e.html?ffmt=csv&lang=e&prov=${prov}&yr=1981&stnID=${stnId}&climateID=${climateId}+++++++++++++&submit=Download+Data`
     }).then(function (res) {
-      
       var header = res.split('\n');
       header.splice(0, 3);            // Trim problematic lines.
 
@@ -36,16 +24,16 @@ class Climate {
         to: 1,
         columns: true
       }, function (err, h) {
-        // Set data object fields.
-        //console.log(h);
-        data.station = h[0].STATION_NAME;
-        data.province = h[0].PROVINCE;
-        data.latlng = [
-          convertToDecimalDegrees(h[0].LATITUDE), 
-          convertToDecimalDegrees(h[0].LONGITUDE)
-        ];
-        data.elevation = trimElevation(h[0].ELEVATION);
-        data.climateId = Number(h[0].CLIMATE_ID);
+        var data = {
+          id: Number(h[0].CLIMATE_ID),
+          station: _.capitalize(h[0].STATION_NAME),
+          province: h[0].PROVINCE,
+          latlng: [
+            convertToDecimalDegrees(h[0].LATITUDE), 
+            convertToDecimalDegrees(h[0].LONGITUDE)
+          ],
+          elevation: trimElevation(h[0].ELEVATION)
+        };
 
         var raw = res.split('\n');    // Trim problematic lines.
         raw.splice(0, 13);
@@ -57,13 +45,7 @@ class Climate {
           to: 19,
           columns: true
         }, function (err, rows) {
-          data.normals = {}; //rows.filter(o => !o[" "].includes("Date"));
-
-          rows.filter(o => !o[" "].includes("Date"))
-            .forEach(o => {
-
-            });
-
+          data.normals = transformClimateNormals(rows);
           callback(null, data);
         });
       });
