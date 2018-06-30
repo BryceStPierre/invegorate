@@ -10,19 +10,34 @@ class Climate {
 
       // Trim header lines and problematic lines.
       var lines = res.split('\n');
-      lines.splice(0, 13);
-      lines.splice(1, 1);
-      lines.splice(9, 1);
+      // lines.splice(0, 13);
+      // lines.splice(1, 1);
+      // lines.splice(9, 1);
+
+      lines.splice(0, 3);
+
 
       parse(lines.join('\n'), {
         from: 0,
-        to: 19,
+        to: 1,
         columns: true
       }, function (err, output) {
         if (err)
           console.log(err);
         callback(null, output);
       });
+
+
+
+      // parse(lines.join('\n'), {
+      //   from: 0,
+      //   to: 19,
+      //   columns: true
+      // }, function (err, output) {
+      //   if (err)
+      //     console.log(err);
+      //   callback(null, output);
+      // });
 
     }).catch(function (err) {
       console.log(err);
