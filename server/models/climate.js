@@ -1,56 +1,32 @@
 var request = require('request-promise');
-var parse = require('csv-parse');
-var _ = require('lodash');
+var cheerio = require('cheerio');
 
-var convertToDecimalDegrees = require('./utils/convertToDecimalDegrees');
-var transformClimateNormals = require('./utils/transformClimateNormals');
-var trimElevation = require('./utils/trimElevation');
+var convertToDMS = require('./utils/convertToDMS');
+var processClimateCSV = require('./utils/processClimateCSV');
 
 class Climate {
-  static retrieveByName (name, callback) {
-
-    const prov = 'ON';
-    const stnId = 4607;
-    const climateId = 6130257;
+  static retrieveByCoordinates (latitude, longitude, callback) {
+    var lat = convertToDMS(latitude);
+    var long = convertToDMS(longitude);
 
     request({
-      uri: `http://climate.weather.gc.ca/climate_normals/bulk_data_e.html?ffmt=csv&lang=e&prov=${prov}&yr=1981&stnID=${stnId}&climateID=${climateId}+++++++++++++&submit=Download+Data`
-    }).then(function (res) {
-      var lines = res.split('\n');
-      lines.splice(0, 3);            // Trim problematic lines.
+      uri: `http://climate.weather.gc.ca/climate_normals/station_select_1981_2010_e.html?searchType=stnProx&txtRadius=25&optProxType=custom`
+        + `&txtCentralLatDeg=${lat.degrees}&txtCentralLatMin=${lat.minutes}&txtCentralLatSec=${lat.seconds}`
+        + `&txtCentralLongDeg=${long.degrees}&txtCentralLongMin=${long.minutes}&txtCentralLongSec=${long.seconds}`,
+      transform: body => cheerio.load(body)
+    }).then(function ($) {
+      var stationId = Number($('table tbody').children().first().find('a').attr('href').split('stnID=')[1].split('&')[0]);
+      var province = $('table tbody').children().first().children().eq(1).text().trim();
 
-      parse(lines.join('\n'), {
-        from: 0,
-        to: 1,
-        columns: true
-      }, function (err, h) {
-        var data = {
-          id: Number(h[0].CLIMATE_ID),
-          station: _.capitalize(h[0].STATION_NAME),
-          province: h[0].PROVINCE,
-          latlng: [
-            convertToDecimalDegrees(h[0].LATITUDE), 
-            convertToDecimalDegrees(h[0].LONGITUDE)
-          ],
-          elevation: trimElevation(h[0].ELEVATION)
-        };
+      const climateId = 6130257;
 
-        lines = res.split('\n');    // Trim problematic lines.
-        lines.splice(0, 13);
-        lines.splice(1, 1);
-        lines.splice(9, 1);
-
-        parse(lines.join('\n'), {
-          from: 0,
-          to: 19,
-          columns: true
-        }, function (err, rows) {
-          data.normals = transformClimateNormals(rows);
-          callback(null, data);
-        });
+      request({
+        uri: `http://climate.weather.gc.ca/climate_normals/bulk_data_e.html?ffmt=csv&lang=e&prov=${province}&yr=1981&stnID=${stationId}&climateID=${climateId}+++++++++++++&submit=Download+Data`
+      }).then(function (res) {
+        processClimateCSV(res, callback);
+      }).catch(function (err) {
+        console.log(err);
       });
-    }).catch(function (err) {
-      console.log(err);
     });
   }
 }

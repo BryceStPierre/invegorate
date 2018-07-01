@@ -1,5 +1,12 @@
-function convertToDMS (decimal) {
+function convertToDMS (decimal) { // Will only support Canada for now.
+  var dms = {
+    direction: decimal < 0 ? 'W' : 'N',
+    degrees: parseInt(Math.abs(decimal))
+  };
+  dms.minutes = parseInt((Math.abs(decimal) - dms.degrees) * 60);
+  dms.seconds = (Math.abs(decimal) - dms.degrees - dms.minutes / 60) * 3600;
 
+  return dms;
 }
 
 module.exports = convertToDMS;
