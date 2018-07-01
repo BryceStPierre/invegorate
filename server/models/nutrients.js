@@ -1,10 +1,12 @@
 var request = require('request-promise');
 
+const usdaAPIKey = `FX0BnN6mw3rW67n7ZApGDdxx1AD9QpxfbZ5rcOpn`;
+
 class Nutrients {
   static retrieveByName (name, callback) {
     var query = `${name.split('-').join('%20')}%20cooked`;
 
-    var nutrientURI = `https://api.nal.usda.gov/ndb/nutrients/?format=json&api_key=FX0BnN6mw3rW67n7ZApGDdxx1AD9QpxfbZ5rcOpn`
+    var nutrientURI = `https://api.nal.usda.gov/ndb/nutrients/?format=json&api_key=${usdaAPIKey}`
     var nutrients = [
       208, 205, 269, 291, 204,
       203, 318, 320, 404, 406, 
@@ -14,7 +16,7 @@ class Nutrients {
     nutrientURI += nutrients.map(n => `&nutrients=${n}`).join("");
 
     request({
-      uri: `https://api.nal.usda.gov/ndb/search/?format=json&q=${query}&sort=r&max=5&ds=Standard%20Reference&api_key=FX0BnN6mw3rW67n7ZApGDdxx1AD9QpxfbZ5rcOpn`,
+      uri: `https://api.nal.usda.gov/ndb/search/?format=json&q=${query}&sort=r&max=5&ds=Standard%20Reference&api_key=${usdaAPIKey}`,
       json: true
     }).then(function(res) {
       if (res.list.item[0].ndbno) {
