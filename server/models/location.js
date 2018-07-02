@@ -2,19 +2,20 @@ var googleMapsClient = require('@google/maps').createClient({
   key: 'AIzaSyC63yhUqQLPXp0Af_Irf8Hx9LsJfwMIUD8'
 });
 
+// var postalCode = response.json.results[0].address_components.filter(o => {
+//   return o.types.includes('postal_code');
+// })[0].long_name;
+
 class Location {
   static retrieveByAddress (address, callback) {
     googleMapsClient.geocode({
       address: address
     }, function(err, response) {
-      if (err)
+      if (err) {
         console.log(err);
-
-      var postalCode = response.json.results[0].address_components.filter(o => {
-        return o.types.includes('postal_code');
-      })[0].long_name;
-
-      callback(err, postalCode);
+        return callback({ error: 'Geocode API error.' });
+      }
+      callback(response.json.results[0]);
     });
   }
 
@@ -22,25 +23,24 @@ class Location {
     googleMapsClient.reverseGeocode({
       latlng: [latitude, longitude]
     }, function(err, response) {
-      if (err)
+      if (err) {
         console.log(err);
-
-      var postalCode = response.json.results[0].address_components.filter(o => {
-        return o.types.includes('postal_code');
-      })[0].long_name;
-
-      callback(err, postalCode);
+        return callback({ error: 'Reverse Geocode API error.' });
+      }
+      callback(response.json.results[0]);
     });
   }
 
-  static retrievePlacesByName (input, callback) {
+  static retrievePlacesByQuery (query, callback) {
     googleMapsClient.placesAutoComplete({
-      input: input,
+      input: query,
       sessiontoken: ""
     }, function (err, response) {
-      if (err)
+      if (err) {
         console.log(err);
-      callback(err, response.json.predictions);
+        return callback({ error: 'Places API error.' });
+      }
+      callback(response.json);
     });
   }
 }
