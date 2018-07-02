@@ -31,6 +31,8 @@ if (ENV === 'production') {
 
 var db = require('./database');
 db.query('SELECT NOW()', (err, res) => {
+  if (err.error)
+    return console.log(err.error);
   console.log(`PostgreSQL connected: ${res[0].now}.`);
 });
 

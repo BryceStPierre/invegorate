@@ -26,11 +26,10 @@ class Database {
       client.query(query, params, (err, res) => {
         done();
         if (err) {
-          callback(err, null);
           console.log(err.stack);
-        } else {
-          callback(null, res.rows.length > 0 ? res.rows : null);
+          return callback({ error: 'Database error.' }, null);
         }
+        callback({}, res.rows.length > 0 ? res.rows : null);
       });
     });
   }
