@@ -4,7 +4,6 @@ var router = express.Router();
 var Item = require('../models/item');
 
 // Example usage:
-// 
 // /api/item/broccoli
 router.get('/:name', function (req, res) {
   Item.retrieveByName(req.params.name, function (err, item) {
