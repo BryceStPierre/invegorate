@@ -6,10 +6,11 @@ var Item = require('../models/item');
 // Example usage:
 // /api/item/broccoli
 router.get('/:name', function (req, res) {
-  Item.retrieveByName(req.params.name, function (err, item) {
-    if (err) 
-      return res.json(err);
-    return res.json(item);
+  if (!req.params.name)
+    return res.json({ error: 'Incorrect API usage: missing name.' });
+
+  Item.retrieveByName(req.params.name, function (item) {
+    res.json(item);
   });
 });
 
