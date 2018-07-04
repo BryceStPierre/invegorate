@@ -7,7 +7,7 @@ import {
   Link
 } from 'react-router-dom';
 
-import { Button } from 'semantic-ui-react';
+import { Button, Container, Menu, Segment } from 'semantic-ui-react';
 
 
 import Browse from './Browse';
@@ -63,10 +63,12 @@ class App extends Component {
     super(props)
   
     this.state = {
-      users: []
-    }
+      activeItem: 'home'
+    };
   }
   
+  handleItemClick = (e, { name }) => this.setState({ activeItem: name });
+
   componentDidMount() {
     // fetch('/api/users')
     //   .then(res => res.json())
@@ -74,39 +76,53 @@ class App extends Component {
   }
 
   render() {
+    const { activeItem } = this.state;
+
     return (
       <Router>
-        <div className="App">
-          <header className="App-header">
-            <img src={logo} className="App-logo" alt="logo" />
-            <h1 className="App-title">Welcome to React</h1>
+        <Container style={{ marginTop: '3em' }}>
+        
+          <Menu pointing secondary>
+            <Menu.Item 
+              as={Link}
+              to='/'
+              name='home' 
+              active={activeItem === 'home'} 
+              onClick={this.handleItemClick} 
+            />
+            <Menu.Item
+              as={Link}
+              to='/about'
+              name='about'
+              active={activeItem === 'about'}
+              onClick={this.handleItemClick}
+            />
+            <Menu.Item
+              as={Link}
+              to='/topics'
+              name='topics'
+              active={activeItem === 'topics'}
+              onClick={this.handleItemClick}
+            />
+            <Menu.Menu position='right'>
+              <Menu.Item
+                as={Link}
+                to='/logout'
+                name='logout'
+                active={activeItem === 'logout'}
+                onClick={this.handleItemClick}
+              />
+            </Menu.Menu>
+          </Menu>
 
-          </header>
-          <p className="App-intro">
-            To get started, edit <code>src/App.js</code> and save to reload.
-            <Button>Click Here</Button>
-          </p>
-          <ul>
-          {this.state.users.map(user =>
-            <li key={user.id}>{user.data}</li>
-          )}
-          </ul>
-          <div>
-            <ul>
-              <li><Link to="/">Home</Link></li>
-              <li><Link to="/about">About</Link></li>
-              <li><Link to="/topics">Topics</Link></li>
-              <li><Link to="/browse/broccoli">broccoli</Link></li>
-            </ul>
-
-            <hr/>
-
+          <Segment>
             <Route exact path="/" component={Home}/>
             <Route path="/about" component={About}/>
             <Route path="/topics" component={Topics}/>
             <Route path="/browse/:name" component={Browse}/>
-          </div>
-        </div>
+          </Segment>
+
+        </Container>
       </Router>
     );
   }
