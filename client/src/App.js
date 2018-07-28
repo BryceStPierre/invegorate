@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+// import logo from './logo.svg';
+import logo from './assets/invegorate.png';
 
 import {
   BrowserRouter as Router,
@@ -7,7 +8,7 @@ import {
   Link
 } from 'react-router-dom';
 
-import { Button, Container, Menu, Segment } from 'semantic-ui-react';
+import { Button, Container, Menu, Segment, Image, Divider } from 'semantic-ui-react';
 
 
 import Browse from './Browse';
@@ -81,8 +82,10 @@ class App extends Component {
     return (
       <Router>
         <Container style={{ marginTop: '3em' }}>
-        
-          <Menu pointing secondary>
+
+          <Image src={logo} size='small' centered />
+
+          <Menu pointing secondary stackable>
             <Menu.Item 
               as={Link}
               to='/'
