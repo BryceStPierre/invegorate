@@ -2,13 +2,9 @@ import React, { Component } from 'react';
 // import logo from './logo.svg';
 import logo from './assets/invegorate.png';
 
-import {
-  BrowserRouter as Router,
-  Route,
-  Link
-} from 'react-router-dom';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
-import { Button, Container, Menu, Segment, Image, Divider } from 'semantic-ui-react';
+import { Button, Container, Menu, Segment, Image, Divider, Icon } from 'semantic-ui-react';
 
 
 import Browse from './Browse';
@@ -81,16 +77,16 @@ class App extends Component {
 
     return (
       <Router>
-        <Container style={{ marginTop: '3em' }}>
+        <Container style={{ marginTop: '1em' }}>
 
           <Image src={logo} size='small' centered />
 
-          <Menu pointing secondary stackable>
+          <Menu pointing secondary style={{ marginTop: 0 }}>
             <Menu.Item 
               as={Link}
               to='/'
-              name='home' 
-              active={activeItem === 'home'} 
+              name='dashboard' 
+              active={activeItem === 'dashboard'} 
               onClick={this.handleItemClick} 
             />
             <Menu.Item
@@ -100,22 +96,28 @@ class App extends Component {
               active={activeItem === 'about'}
               onClick={this.handleItemClick}
             />
-            <Menu.Item
+            {/* <Menu.Item
               as={Link}
               to='/topics'
               name='topics'
               active={activeItem === 'topics'}
               onClick={this.handleItemClick}
-            />
+            /> */}
             <Menu.Menu position='right'>
               <Menu.Item
                 as={Link}
-                to='/logout'
-                name='logout'
-                active={activeItem === 'logout'}
-                onClick={this.handleItemClick}
-              />
+                to='/sign-in'
+                name='sign in'
+                active={activeItem === 'sign in'}
+                onClick={this.handleItemClick} />
+              
             </Menu.Menu>
+          </Menu>
+
+          <Menu fluid widths={3} secondary>
+            <Menu.Item name='buy' active={activeItem === 'buy'} onClick={this.handleItemClick} />
+            <Menu.Item name='sell' active={activeItem === 'sell'} onClick={this.handleItemClick} />
+            <Menu.Item name='rent' active={activeItem === 'rent'} onClick={this.handleItemClick} />
           </Menu>
 
           <Segment>
