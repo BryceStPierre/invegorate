@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 import { Button, Icon } from 'semantic-ui-react';
 
@@ -12,7 +12,7 @@ const About = () => {
         remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing 
         Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions 
         of Lorem Ipsum.</p>
-
+      <p>Find Bryce St. Pierre on:</p>
       <Button color='twitter' as='a' target='_blank' href='https://twitter.com/BryceStPierre'>
         <Icon name='twitter' /> Twitter
       </Button>
