@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 
-import { Button, Container, Menu, Input, Segment, Image, Divider, Icon, Dropdown, Grid, List, Header} from 'semantic-ui-react';
+import { Button, Container, Menu, Input, Segment, Image, Card, Icon, Dropdown, Grid, List, Header} from 'semantic-ui-react';
+
+import placeImage from './assets/image.png'
 
 export default class Browse extends Component {
 
@@ -8,11 +10,16 @@ export default class Browse extends Component {
     super(props);
     
     this.state = {
-      activeItem: 'all'
+      activeItem: 'all',
+      searchLoading: false
     }
   }
 
   handleItemClick = (e, { name }) => this.setState({ activeItem: name })
+
+  handleSearch = (e) => {
+    console.log(e.target.value);
+  }
 
   componentDidMount() {
     // const { name } = this.state;
@@ -28,20 +35,31 @@ export default class Browse extends Component {
     //   .then(nutrients => {
     //     console.log(nutrients);
     //   });
+
+
+    this.searchInput.focus();
   }
 
   render() {
-    const { activeItem } = this.state;
+    const { activeItem, searchLoading } = this.state;
 
     return (
       <div>
         <h1>Browse</h1>
 
-        <Input fluid icon='search' placeholder='Search...' style={{ marginBottom: '1em' }}/>
+        <Input 
+          transparent
+          icon='search' 
+          placeholder='Find an item...' 
+          loading={searchLoading} 
+          ref={(input) => { this.searchInput = input; }} 
+          style={{ marginTop: '1em', marginBottom: '2em' }}
+          onKeyUp={this.handleSearch}
+        />
 
         <Grid stackable>
           <Grid.Row>
-            <Grid.Column width={4} >
+            <Grid.Column width={3} >
               <Menu text vertical>
                 <Menu.Item header style={{ marginTop: 0 }}>View</Menu.Item>
                 <Menu.Item
@@ -66,8 +84,83 @@ export default class Browse extends Component {
                 />
               </Menu>
             </Grid.Column>
-            <Grid.Column width={12} >
-              <Header as='h4' content='Content' style={{ marginTop: 0 }}/>
+            <Grid.Column width={13} >
+              <Header as='h5' content='CONTENT' style={{ marginTop: 0 }}/>
+
+              <Card.Group stackable itemsPerRow={3}>
+
+                <Card>
+                  <Image
+                    src={placeImage}
+                    as='a'
+                    href='http://google.com'
+                    target='_blank'
+                  />
+                  <Card.Content>
+                    <Card.Header>Title</Card.Header>
+                    <Card.Meta>
+                      <span className='date'>Category</span>
+                    </Card.Meta>
+                  </Card.Content>
+                </Card>
+                <Card>
+                  <Image
+                    src={placeImage}
+                    as='a'
+                    href='http://google.com'
+                    target='_blank'
+                  />
+                  <Card.Content>
+                    <Card.Header>Title</Card.Header>
+                    <Card.Meta>
+                      <span className='date'>Category</span>
+                    </Card.Meta>
+                  </Card.Content>
+                </Card>
+                <Card>
+                  <Image
+                    src={placeImage}
+                    as='a'
+                    href='http://google.com'
+                    target='_blank'
+                  />
+                  <Card.Content>
+                    <Card.Header>Title</Card.Header>
+                    <Card.Meta>
+                      <span className='date'>Category</span>
+                    </Card.Meta>
+                  </Card.Content>
+                </Card>
+                <Card>
+                  <Image
+                    src={placeImage}
+                    as='a'
+                    href='http://google.com'
+                    target='_blank'
+                  />
+                  <Card.Content>
+                    <Card.Header>Title</Card.Header>
+                    <Card.Meta>
+                      <span className='date'>Category</span>
+                    </Card.Meta>
+                  </Card.Content>
+                </Card>
+                <Card>
+                  <Image
+                    src={placeImage}
+                    as='a'
+                    href='http://google.com'
+                    target='_blank'
+                  />
+                  <Card.Content>
+                    <Card.Header>Title</Card.Header>
+                    <Card.Meta>
+                      <span className='date'>Category</span>
+                    </Card.Meta>
+                  </Card.Content>
+                </Card>
+              </Card.Group>
+
             </Grid.Column>
           </Grid.Row>
         </Grid>
