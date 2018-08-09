@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 
-import { Button, Container, Menu, Input, Segment, Image, Card, Icon, Dropdown, Grid, List, Header} from 'semantic-ui-react';
+import { Button, Container, Menu, Input, Item, Image, Card, Icon, Dropdown, Grid, Header} from 'semantic-ui-react';
 
-import placeImage from './assets/image.png'
+import List from './browse/List';
 
 export default class Browse extends Component {
 
@@ -87,79 +87,7 @@ export default class Browse extends Component {
             <Grid.Column width={13} >
               <Header as='h5' content='CONTENT' style={{ marginTop: 0 }}/>
 
-              <Card.Group stackable itemsPerRow={3}>
-
-                <Card>
-                  <Image
-                    src={placeImage}
-                    as='a'
-                    href='http://google.com'
-                    target='_blank'
-                  />
-                  <Card.Content>
-                    <Card.Header>Title</Card.Header>
-                    <Card.Meta>
-                      <span className='date'>Category</span>
-                    </Card.Meta>
-                  </Card.Content>
-                </Card>
-                <Card>
-                  <Image
-                    src={placeImage}
-                    as='a'
-                    href='http://google.com'
-                    target='_blank'
-                  />
-                  <Card.Content>
-                    <Card.Header>Title</Card.Header>
-                    <Card.Meta>
-                      <span className='date'>Category</span>
-                    </Card.Meta>
-                  </Card.Content>
-                </Card>
-                <Card>
-                  <Image
-                    src={placeImage}
-                    as='a'
-                    href='http://google.com'
-                    target='_blank'
-                  />
-                  <Card.Content>
-                    <Card.Header>Title</Card.Header>
-                    <Card.Meta>
-                      <span className='date'>Category</span>
-                    </Card.Meta>
-                  </Card.Content>
-                </Card>
-                <Card>
-                  <Image
-                    src={placeImage}
-                    as='a'
-                    href='http://google.com'
-                    target='_blank'
-                  />
-                  <Card.Content>
-                    <Card.Header>Title</Card.Header>
-                    <Card.Meta>
-                      <span className='date'>Category</span>
-                    </Card.Meta>
-                  </Card.Content>
-                </Card>
-                <Card>
-                  <Image
-                    src={placeImage}
-                    as='a'
-                    href='http://google.com'
-                    target='_blank'
-                  />
-                  <Card.Content>
-                    <Card.Header>Title</Card.Header>
-                    <Card.Meta>
-                      <span className='date'>Category</span>
-                    </Card.Meta>
-                  </Card.Content>
-                </Card>
-              </Card.Group>
+              <List />
 
             </Grid.Column>
           </Grid.Row>
